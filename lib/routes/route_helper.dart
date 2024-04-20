@@ -1,3 +1,4 @@
+import 'package:food_delivery/pages/auth/sign_in_page.dart';
 import 'package:food_delivery/pages/cart/cart_page.dart';
 import 'package:food_delivery/pages/food/popular_food_detail.dart';
 import 'package:food_delivery/pages/food/recommended_food_detail.dart';
@@ -8,6 +9,7 @@ import 'package:get/get.dart';
 
 class RouteHelper {
   static const String initial = "/";
+  static const String signIn = "/signIn";
   static const String homepage = "/homePage";
   static const String mainPage = "/mainPage";
   static const String popularFood = "/popular-food";
@@ -22,6 +24,11 @@ class RouteHelper {
     GetPage(
       name: initial,
       page: () => const SplashScreen(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: signIn,
+      page: () => const SignInPage(),
       transition: Transition.fadeIn,
     ),
     GetPage(

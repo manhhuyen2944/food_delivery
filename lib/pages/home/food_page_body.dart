@@ -33,7 +33,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   void initState() {
     super.initState();
-    _autoScrollSlider();
+   // _autoScrollSlider();
     pageController.addListener(() {
       setState(() {
         _currPageValue = pageController.page!;
@@ -41,33 +41,33 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     });
   }
 
-  void _autoScrollSlider() {
-    bool reverse = false;
+  // void _autoScrollSlider() {
+  //   bool reverse = false;
 
-    _timer = Timer.periodic(const Duration(seconds: 4), (Timer timer) {
-      if (!reverse) {
-        if (_currPageValue < 5) {
-          _currPageValue += 1;
-        } else {
-          reverse = true;
-          _currPageValue -= 1;
-        }
-      } else {
-        if (_currPageValue > 0) {
-          _currPageValue -= 1;
-        } else {
-          reverse = false;
-          _currPageValue += 1;
-        }
-      }
+  //   _timer = Timer.periodic(const Duration(seconds: 4), (Timer timer) {
+  //     if (!reverse) {
+  //       if (_currPageValue < 5) {
+  //         _currPageValue += 1;
+  //       } else {
+  //         reverse = true;
+  //         _currPageValue -= 1;
+  //       }
+  //     } else {
+  //       if (_currPageValue > 0) {
+  //         _currPageValue -= 1;
+  //       } else {
+  //         reverse = false;
+  //         _currPageValue += 1;
+  //       }
+  //     }
 
-      pageController.animateToPage(
-        _currPageValue.toInt(),
-        duration: const Duration(milliseconds: 1000),
-        curve: Curves.ease,
-      );
-    });
-  }
+  //     pageController.animateToPage(
+  //       _currPageValue.toInt(),
+  //       duration: const Duration(milliseconds: 1000),
+  //       curve: Curves.ease,
+  //     );
+  //   });
+  // }
 
   @override
   void dispose() {

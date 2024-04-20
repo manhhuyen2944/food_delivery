@@ -8,10 +8,12 @@ class AppTextField extends StatelessWidget {
     required this.textCotroller,
     required this.hintText,
     required this.icon,
+    this.isObscure = false,
   }) : super(key: key);
   final TextEditingController textCotroller;
   final String hintText;
   final IconData icon;
+  final bool isObscure;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,17 +21,18 @@ class AppTextField extends StatelessWidget {
           left: Dimensions.height20, right: Dimensions.height20),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(Dimensions.radius30),
+        borderRadius: BorderRadius.circular(Dimensions.radius15),
         boxShadow: [
           BoxShadow(
-            blurRadius: 10,
-            spreadRadius: 7,
-            offset: const Offset(1, 10),
+            blurRadius: 3,
+            spreadRadius: 1,
+            offset: const Offset(1, 1),
             color: Colors.grey.withOpacity(0.2),
           ),
         ],
       ),
       child: TextField(
+        obscureText: isObscure ? true : false,
         controller: textCotroller,
         decoration: InputDecoration(
           hintText: hintText,
@@ -38,15 +41,15 @@ class AppTextField extends StatelessWidget {
             color: AppColors.mainColor,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
             borderSide: const BorderSide(width: 1, color: Colors.white),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
             borderSide: const BorderSide(width: 1, color: Colors.white),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(Dimensions.radius30),
+            borderRadius: BorderRadius.circular(Dimensions.radius15),
           ),
         ),
         cursorColor: AppColors.mainColor,

@@ -138,8 +138,14 @@ class CartController extends GetxController {
     _items = {};
     _items = setItems;
   }
-  void addToCartList(){
-     cartRepository.addToCartList(getItems);
-     update();
+
+  void addToCartList() {
+    cartRepository.addToCartList(getItems);
+    update();
+  }
+
+  void clearCartHistory() {
+    cartRepository.clearCartHistory();
+    update();
   }
 }

@@ -68,4 +68,10 @@ class CartRepository {
         cartListHistory.add(CartModel.fromJson(jsonDecode(element))));
     return cartListHistory;
   }
+
+  void clearCartHistory() {
+    removeCart();
+    cartHistory = [];
+    sharedPreferences.remove(AppConstants.cartHistoryList);
+  }
 }

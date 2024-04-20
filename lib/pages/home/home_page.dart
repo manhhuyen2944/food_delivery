@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/pages/auth/sign_up_page.dart';
 import 'package:food_delivery/pages/cart/cart_history.dart';
 import 'package:food_delivery/pages/home/main_food_page.dart';
 import 'package:food_delivery/pages/profile/account_page.dart';
@@ -19,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   List page = [
     //Get.toNamed(RouteHelper.mainPage),
     const MainFoodPage(),
-    const SignUpPage(),
+    const SizedBox(child: Text("History page")),
     const CartHistory(),
     const AccountPage(),
   ];
